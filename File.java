@@ -1,5 +1,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class File {
     public static boolean writeFile(String[] dataArr) {
@@ -9,11 +10,12 @@ public class File {
             }
             writer.append('\n');
             writer.flush();
-            writer.close();
             return true;
         }
         catch(IOException e) {
+            System.out.println("Ошибка!");
             System.out.println(e.getMessage());
+            System.out.println(Arrays.toString(e.getStackTrace()));
             return false;
         }
     }
